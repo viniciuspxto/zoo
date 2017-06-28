@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <head>
+        <title>Rio Zoo Intranet</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Sistema criado para trabalho de faculdade, disciplina POOA. Todos os direitos reservados regasguardados, não permitindo a reutilização sem permissão prévia." />
+        <meta name="keywords" content="HTML,CSS,XML,JavaScript" />
+        <meta name="author" content="Vinícius Peixoto" />
+        
+        <!--CSS BOOTSTRAP-->
+        <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css" />
+        <!--CSS ION ICONS-->
+        <link rel="stylesheet" href="resources/fonts/ionicons.min.css" />
+        <!--CSS LOGIN-->
+        <link rel="stylesheet" href="resources/css/Login-Form-Dark.css" />
+        
+        <link rel="stylesheet" href="resources/css/styles.css" />
+    </head>
+    
+    <body>
+        <div class="container-fluid">
+            
+            <div class="login-dark">
+                <h:form>
+                    <h2 class="sr-only" style="color: #fff;">Formulário de Login</h2>
+                    <div class="illustration"><img src="resources/img/logo-riozoo.png" alt="" /></div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="matricula" placeholder="Matrícula" />
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="password" name="password" placeholder="Senha" />
+                    </div>
+                    <div class="form-group">
+                        <h:commandButton class="btn btn-primary" action="#{loginBean.login()}" value="ENTRAR"></h:commandButton>
+                    </div>
+                    <a href="#" class="forgot">Esqueceu a senha?</a>
+                </h:form>
+            </div>
+            
+            
+        </div>
+        
+        <!--JQUERY-->
+        <script src="assets/js/jquery.min.js"></script>
+        <!--BOOTSTRAP JS-->
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    </body>
+</html>

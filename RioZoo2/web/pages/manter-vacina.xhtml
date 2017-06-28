@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns="http://www.w3.org/1999/xhtml"
+                template="../template.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:define name="content">
+
+        <article>
+            <div class="container-fluid">
+                <div class="corpo mTop-20">
+                    <div class="row tituloPage">
+                        <div class="col-md-12">
+                            <h4>Manter Vacinas</h4>
+                            <hr class="destaque"/>
+                            <button id="add-vacina" class="btn btn-sm btn-verde btn-add"> <span class="ion-plus-circled"> </span>Add Nova Vacina</button>
+                        </div>
+                    </div>
+
+                    <div class="row pesquisa-vacinas mTop-20">
+                        <div class="col-md-12">
+                            <span class="subsub">Vacinas Disponíveis</span>
+                            <hr/>
+                        </div>
+                        <div class="col-md-12" style="overflow-x: auto">
+                            <h:form id="formVacina">
+                                <table class="table tabela-padrao table-striped table-responsive">
+                                    <thead>
+                                        <tr>
+                                            <th>Código</th>
+                                            <th>Nome</th>
+                                            <th>Quantidade Estoque</th>
+                                            <th>Ações</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <ui:repeat var="vacina" value="#{vacinaBean.listavacinas}">
+                                            <tr>
+                                                <td>#{vacina.codigo}</td>
+                                                <td>#{vacina.nome}</td>
+                                                <td>#{vacina.quantidade}</td>
+                                                <td><h:commandLink  action="#{vacinaBean.excluir(vacina)}">
+                                                        <span class="ion-trash-a" title="Excluir" data-tt="tooltip" data-placement="top"></span>
+                                                        <f:ajax render="formVacina" />
+                                                    </h:commandLink>
+                                                </td>
+                                            </tr>
+                                        </ui:repeat>
+
+                                    </tbody>
+                                </table>
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="add-vacina corpo mTop-20">
+                    <div class="row">
+                        <h:form id="formSalvarVacina">
+                            <div class="col-md-12">
+                                <h4>Adicionar nova vacina</h4>
+                                <hr class="destaque"/>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="" class="control-label">Código</label>
+                                <h:inputText class="form-control" value="#{vacinaBean.vacina.codigo}"></h:inputText>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="" class="control-label">Nome da Vacina</label>
+                                <h:inputText class="form-control" value="#{vacinaBean.vacina.nome}"></h:inputText>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="" class="control-label">Quantidade</label>
+                                <h:inputText class="form-control" value="#{vacinaBean.vacina.quantidade}"></h:inputText>
+                            </div>
+                            <div class="col-md-12 right">
+                                <button id="cancelar" class="btn btn-sm btn-vermelho"> <span class="ion-close"> </span>Cancelar</button>
+                                <h:commandButton action="#{vacinaBean.salvar()}" value="Adicionar" id="nova-equipe" class="btn btn-sm btn-verde"> 
+                                    <f:ajax execute="@form" render="formVacina formSalvarVacina" />
+                                </h:commandButton>
+                            </div>
+                        </h:form>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+    </ui:define>
+</ui:composition>

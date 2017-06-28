@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rio Zoo - Manter Vacinas</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+
+        <nav>
+            <div class="row navbarLeft">
+                <div class="col-md-12 logo">
+                    <a href="dash.html"><img src="assets/img/logo-riozoo.png" alt=""></a>
+                </div>
+                <div class="col-md-12">
+                    <ul class="navbar">
+                        <li><a href="perfil-usuario.html"><img src="assets/img/user.svg" alt=""> <span>Perfil Usuário</span></a></li>
+                        <li><a href="dash.html"><i class="ion-android-home"></i> <span>Dashboard</span></a></li>
+                        <li><a href="manter-animais.html"><i class="ion-ios-paw"></i> <span>Animais</span></a></li>
+                        <li><a href="manter-consultas.html"><i class="ion-medkit"></i> <span>Consultas</span></a></li>
+                        <li><a href="relatorios.html"><i class="ion-ios-paper"></i> <span>Relatórios</span></a></li>
+                        <li><a href="manter-funcionarios.html"><i class="ion-person-stalker"></i> <span>Funcionários</span></a></li>
+                        <li><a href="index.html"><i class="ion-power" aria-hidden="true"></i> <span>Sair</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <article>
+            <div class="container-fluid">
+                <div class="corpo mTop-20">
+                    <div class="row tituloPage">
+                        <div class="col-md-12">
+                            <h4>Manter Vacinas</h4>
+                            <hr class="destaque"/>
+                            <button id="add-vacina" class="btn btn-sm btn-verde btn-add"> <span class="ion-plus-circled"> </span>Add Nova Vacina</button>
+                        </div>
+                    </div>
+
+                    <div class="row pesquisa-vacinas mTop-20">
+                        <div class="col-md-12">
+                            <span class="subsub">Vacinas Disponíveis</span>
+                            <hr/>
+                        </div>
+                        <div class="col-md-12" style="overflow-x: auto">
+                            <table class="table tabela-padrao table-striped table-responsive">
+                                <thead>
+                                    <tr>
+                                        <th>Código</th>
+                                        <th>Nome</th>
+                                        <th>Quantidade Estoque</th>
+                                        <th>Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>28765</td>
+                                        <td>N1H1-A</td>
+                                        <td>34</td>
+                                        <td>
+                                            <a href=""><span class="ion-edit" title="Editar" data-tt="tooltip" data-placement="top"></span></a>
+
+                                            <a href=""><span class="ion-trash-a" title="Excluir" data-tt="tooltip" data-placement="top"></span></a>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>28765</td>
+                                        <td>N1H1-A</td>
+                                        <td>127</td>
+                                        <td>
+                                            <a href=""><span class="ion-edit" title="Editar" data-tt="tooltip" data-placement="top"></span></a>
+
+                                            <a href=""><span class="ion-trash-a" title="Excluir" data-tt="tooltip" data-placement="top"></span></a>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>28765</td>
+                                        <td>N1H1-A</td>
+                                        <td>46</td>
+                                        <td>
+                                            <a href=""><span class="ion-edit" title="Editar" data-tt="tooltip" data-placement="top"></span></a>
+
+                                            <a href=""><span class="ion-trash-a" title="Excluir" data-tt="tooltip" data-placement="top"></span></a>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="add-vacina corpo mTop-20">
+                    <div class="row">
+                        <form action="">
+                            <div class="col-md-12">
+                                <h4>Adicionar nova vacina</h4>
+                                <hr class="destaque"/>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="" class="control-label">Código</label>
+                                <input type="text" class="form-control" placeholder="Código do animal">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="" class="control-label">Nome da Vacina</label>
+                                <input type="text" class="form-control" placeholder="Nome do animal">
+                            </div>
+                            <div class="col-md-2">
+                                <label for="" class="control-label">Quantidade</label>
+                                <input type="number" class="form-control">
+                            </div>
+                            <div class="col-md-12 right">
+                                <button id="cancelar" class="btn btn-sm btn-vermelho"> <span class="ion-close"> </span>Cancelar</button>
+                                <button id="novo-animal" class="btn btn-sm btn-verde"> <span class="ion-plus-circled"> </span>Adicionar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </article>
+           
+    </div>
+
+
+
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            
+            // TOOLTIPS
+            $("[data-tt=tooltip]").tooltip();
+
+            // MANTER ANIMAIS
+            $("#add-vacina").click(function() {
+                $('.add-vacina').css('display', 'block');
+                $('html, body').animate({
+                    scrollTop: $(".add-vacina").offset().top
+                }, 500);
+            });
+
+            $("#pesquisa-animal").click(function() {
+                $('.pesquisa-animal').css('display', 'block');
+            });
+
+        });
+    </script>
+</body>
+
+</html>

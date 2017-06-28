@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rio Zoo - Manter Animais</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+
+        <nav>
+            <div class="row navbarLeft">
+                <div class="col-md-12 logo">
+                    <a href="dash.html"><img src="assets/img/logo-riozoo.png" alt=""></a>
+                </div>
+                <div class="col-md-12">
+                    <ul class="navbar">
+                        <li><a href="perfil-usuario.html"><img src="assets/img/user.svg" alt=""> <span>Perfil Usuário</span></a></li>
+                        <li><a href="dash.html"><i class="ion-android-home"></i> <span>Dashboard</span></a></li>
+                        <li><a href="manter-animais.html"><i class="ion-ios-paw"></i> <span>Animais</span></a></li>
+                        <li><a href="manter-consultas.html"><i class="ion-medkit"></i> <span>Consultas</span></a></li>
+                        <li><a href="relatorios.html"><i class="ion-ios-paper"></i> <span>Relatórios</span></a></li>
+                        <li><a href="manter-funcionarios.html"><i class="ion-person-stalker"></i> <span>Funcionários</span></a></li>
+                        <li><a href="index.html"><i class="ion-power" aria-hidden="true"></i> <span>Sair</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <article>
+            <div class="container-fluid">
+                <div class="corpo mTop-20">
+                    <div class="row tituloPage">
+                        <div class="col-md-12">
+                            <h4>Agenda de Consultas</h4>
+                            <hr class="destaque"/>
+                            <button id="add-consulta" class="btn btn-sm btn-verde btn-add"> <span class="ion-plus-circled"> </span>Marcar Consulta</button>
+                        </div>
+                    </div>
+
+                    <div class="row dash-consultas">
+                        <div class="col-md-12 center">
+                            <h4>17 de junho de 2017</h4>
+                        </div>
+                        <div class="col-md-12" style="overflow-x: auto">
+                            <table class="table tabela-padrao table-striped table-responsive">
+                                <thead>
+                                    <tr>
+                                        <th>Horário</th>
+                                        <th>Dr. Veterinário 1</th>
+                                        <th>Dr. Veterinário 2</th>
+                                        <th>Dr. Veterinário 3</th>
+                                        <th>Dr. Veterinário 4</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>08:00</td>
+                                        <td>Animal 1 especie </td>
+                                        <td>Animal 2 especie </td>
+                                        <td>Animal 3 especie </td>
+                                        <td>Animal 4 especie</td>
+                                    </tr>
+                                    <tr>
+                                        <td>09:00</td>
+                                        <td>Animal 1 especie </td>
+                                        <td>Animal 2 especie </td>
+                                        <td>Animal 3 especie </td>
+                                        <td>Animal 4 especie</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10:00</td>
+                                        <td>Animal 1 especie </td>
+                                        <td>Animal 2 especie </td>
+                                        <td>Animal 3 especie </td>
+                                        <td>Animal 4 especie</td>
+                                    </tr>
+                                    <tr>
+                                        <td>11:00</td>
+                                        <td>Animal 1 especie </td>
+                                        <td>Animal 2 especie </td>
+                                        <td>Animal 3 especie </td>
+                                        <td>Animal 4 especie</td>
+                                    </tr>
+                                    <tr>
+                                        <td>12:00</td>
+                                        <td>Animal 1 especie </td>
+                                        <td>Animal 2 especie </td>
+                                        <td>Animal 3 especie </td>
+                                        <td>Animal 4 especie</td>
+                                    </tr>
+                                    <tr>
+                                        <td>13:00</td>
+                                        <td>Animal 1 especie </td>
+                                        <td>Animal 2 especie </td>
+                                        <td>Animal 3 especie </td>
+                                        <td>Animal 4 especie</td>
+                                    </tr>
+                                    <tr>
+                                        <td>14:00</td>
+                                        <td>Animal 1 especie </td>
+                                        <td>Animal 2 especie </td>
+                                        <td>Animal 3 especie </td>
+                                        <td>Animal 4 especie</td>
+                                    </tr>
+                                    <tr>
+                                        <td>15:00</td>
+                                        <td>Animal 1 especie </td>
+                                        <td>Animal 2 especie </td>
+                                        <td>Animal 3 especie </td>
+                                        <td>Animal 4 especie</td>
+                                    </tr>
+                                    <tr>
+                                        <td>16:00</td>
+                                        <td>Animal 1 especie </td>
+                                        <td>Animal 2 especie </td>
+                                        <td>Animal 3 especie </td>
+                                        <td>Animal 4 especie</td>
+                                    </tr>
+                                    <tr>
+                                        <td>17:00</td>
+                                        <td>Animal 1 especie </td>
+                                        <td>Animal 2 especie </td>
+                                        <td>Animal 3 especie </td>
+                                        <td>Animal 4 especie</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="add-consulta corpo mTop-20">
+                    <form action="" class="row">
+                        <div class="col-md-12">
+                            <h4>Marcar Nova Consulta</h4>
+                            <hr class="destaque"/>
+                        </div>
+                        <div class="col-md-12">
+                            <span class="subsub">Dados do Animal</span>
+                            <hr/>
+                        </div>
+                        <div class="col-md-2">
+                            <label for="" class="control-label">Código do Animal</label>
+                            <input type="text" class="form-control" placeholder="Código do animal">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="" class="control-label">Nome do Animal</label>
+                            <input type="text" class="form-control" placeholder="Nome do animal">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="" class="control-label">Tratador Responsável</label>
+                            <input type="text" class="form-control" placeholder="Nome do tratador">
+                        </div>
+                        <div class="col-md-12">
+                            <span class="subsub">Dados da Consulta</span>
+                            <hr/>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="" class="control-label">Verinário</label>
+                            <select name="select-vet" id="select-vet" class="form-control">
+                                <option value="">Selecione</option>
+                                <option value="vet1">Dr. Veterinário 1</option>
+                                <option value="vet2">Dr. Veterinário 2</option>
+                                <option value="vet3">Dr. Veterinário 3</option>
+                                <option value="vet4">Dr. Veterinário 4</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <label for="" class="control-label">Data da Consulta</label>
+                            <input type="date" class="form-control">
+                        </div>
+                        <div class="col-md-2">
+                            <label for="" class="control-label">Horário da Consulta</label>
+                            <select name="select-hora" id="select-hora" class="form-control">
+                                <option value="">Selecione</option>
+                                <option value="">08:00</option>
+                                <option value="">09:00</option>
+                                <option value="">10:00</option>
+                                <option value="">11:00</option>
+                                <option value="">12:00</option>
+                                <option value="">13:00</option>
+                                <option value="">14:00</option>
+                                <option value="">15:00</option>
+                                <option value="">16:00</option>
+                                <option value="">17:00</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <label for="" class="control-label">Data do Agendamento</label>
+                            <input type="date" class="form-control">
+                        </div>
+                        <div class="col-md-12 right">
+                            <button id="cancelar" class="btn btn-sm btn-vermelho"> <span class="ion-close"> </span>Cancelar</button>
+                            <button id="novo-animal" class="btn btn-sm btn-verde"> <span class="ion-plus-circled"> </span>Marcar Consulta</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </article>
+           
+    </div>
+
+
+
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            
+            // TOOLTIPS
+            $("[data-tt=tooltip]").tooltip();
+
+            // MANTER CONSULTAS
+            $("#add-consulta").click(function() {
+                $('.add-consulta').css('display', 'block');
+                $('html, body').animate({
+                    scrollTop: $(".add-consulta").offset().top
+                }, 500);
+            });
+
+            
+        });
+    </script>
+</body>
+
+</html>

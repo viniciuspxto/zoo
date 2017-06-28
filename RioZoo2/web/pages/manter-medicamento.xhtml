@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns="http://www.w3.org/1999/xhtml"
+                template="../template.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:define name="content">
+
+        <article>
+            <div class="container-fluid">
+                <div class="corpo mTop-20">
+                    <div class="row tituloPage">
+                        <div class="col-md-12">
+                            <h4>Manter Medicamento</h4>
+                            <hr class="destaque"/>
+                            <button id="add-medicamento" class="btn btn-sm btn-verde btn-add"> <span class="ion-plus-circled"> </span>Add Novo Medicamento</button>
+                        </div>
+                    </div>
+
+                    <div class="row pesquisa-remedios mTop-20">
+                        <div class="col-md-12">
+                            <span class="subsub">Remédios Disponíveis</span>
+                            <hr/>
+                        </div>
+                        <div class="col-md-12" style="overflow-x: auto">
+                            <h:form id="formMedicamento">
+                                <table class="table tabela-padrao table-striped table-responsive">
+                                    <thead>
+                                        <tr>
+                                            <th>Código</th>
+                                            <th>Nome</th>
+                                            <th>Quantidade Estoque</th>
+                                            <th>Ações</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <ui:repeat var="medicamento" value="#{medicamentoBean.medicamentos}">
+                                            <tr>
+                                                <td>#{medicamento.codigo}</td>
+                                                <td>#{medicamento.nome}</td>
+                                                <td>#{medicamento.quantidade}</td>
+                                                <td>
+                                                    <h:commandLink  action="#{medicamentoBean.excluir(medicamento)}">
+                                                        <span class="ion-trash-a" title="Excluir" data-tt="tooltip" data-placement="top"></span>
+                                                        <f:ajax render="formMedicamento" />
+                                                    </h:commandLink>
+                                                </td>
+                                            </tr>
+                                        </ui:repeat>
+                                    </tbody>
+                                </table>
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="add-medicamento corpo mTop-20">
+                    <div class="row">
+                        <h:form id="formSalvarMedicamento">
+                            <div class="col-md-12">
+                                <h4>Adicionar novo medicamento</h4>
+                                <hr class="destaque"/>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="" class="control-label">Código</label>
+                                <h:inputText class="form-control" value="#{medicamentoBean.medicamento.codigo}"></h:inputText>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="" class="control-label">Nome do Medicamento</label>
+                                <h:inputText class="form-control" value="#{medicamentoBean.medicamento.nome}"></h:inputText>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="" class="control-label">Quantidade</label>
+                                <h:inputText class="form-control" value="#{medicamentoBean.medicamento.quantidade}"></h:inputText>
+                            </div>
+                            <div class="col-md-12 right">
+                                <button id="cancelar" class="btn btn-sm btn-vermelho"> <span class="ion-close"> </span>Cancelar</button>
+                                <h:commandButton class="btn btn-sm btn-verde" value="Adicionar" id="novoMedicamento" action="#{medicamentoBean.salvar()}">
+                                    <f:ajax execute="@form" render="formMedicamento formSalvarMedicamento" />
+                                </h:commandButton>
+                            </div>
+                        </h:form>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+    </ui:define>
+</ui:composition>

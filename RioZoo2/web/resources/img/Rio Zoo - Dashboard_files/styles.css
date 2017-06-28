@@ -1,0 +1,279 @@
+body {
+	background-color: #efefef;
+}
+
+/* ########################################################
+			  			HEADER
+######################################################## */
+
+.header {
+	height: 80px;
+	background-color: #fff;
+	/* width: 100%; */
+	margin: 0;
+	padding: 10px;
+	/* border-top: 3px solid #ffc10e; */
+	margin-bottom: 1.2em;
+}
+
+.header img {
+	height: 60px;
+}
+
+/* ########################################################
+			  			NAVBAR
+######################################################## */
+
+.navbarLeft {
+	width: 7.5%;
+	background-color: #fff;
+	min-height: 100%;
+	position: fixed;
+	left: 0;
+	/* top: 80px; */
+	z-index: 1000;
+	margin: 0;
+}
+
+.navbarLeft img {
+	height: 3.750em;
+}
+
+.navbarLeft:hover {
+	width: 20%;
+	box-shadow: 2px 2px 20px #d4d4d4;
+}
+
+.navbarLeft .logo {
+	text-align: center !important;
+	margin: 0 auto;
+	padding-left: 20px;
+	padding-top: 10px;
+}
+
+.navbarLeft ul {
+	width: 100%;
+	list-style: none;
+	padding: 0 !important;
+	border: 0;
+	margin: 20px 0 0 0 !important;
+}
+
+.navbarLeft ul li {
+	width: 100%;
+	padding: 10px 0;
+	font-size: 24px;
+	color: #d4d4d4;
+	text-align: center;
+	margin: 0;
+	border-bottom: 1px solid #efefef;
+}
+
+.navbarLeft ul li:nth-child(1) {
+	padding: 10px;
+	text-align: center !important;
+	margin-left: 0 auto;
+}
+
+.navbarLeft ul li:nth-child(1) img {
+	width: 100%;
+}
+
+.navbarLeft ul li img.sair {
+	height:  100%;
+}
+
+.navbarLeft ul li span {
+	display: none;
+}
+
+
+
+.navbarLeft ul li span {
+	display: none;
+	
+}
+
+.navbarLeft:hover ul li span {
+	display: inline-block;
+	color: #d4d4d4;
+	font-size: 16px;
+	padding-left: 5px;
+}
+
+.navbarLeft:hover ul li:hover span {
+	color: #fff;
+}
+
+.navbarLeft ul li:hover {
+	width: 100%;
+	background-color: #ffc10e;
+	color: #fff;
+	box-shadow: 5px 5px 5px #d4d4d4;
+}
+
+.navbarLeft ul li:active {
+	width: 100%;
+	background-color: #ffc10e;
+	color: #fff;
+	box-shadow: none;
+}
+
+/* ########################################################
+			  		DASH ANIMAIS
+######################################################## */
+
+#dash {
+	margin-left: 8%;
+    margin-top: 0;
+    padding: 0 0em;
+}
+
+.search {
+	background-color: #fff;
+	height: 5em;
+	margin-bottom: 1.2em;
+	padding: 10px 1.4em;
+	margin-top: 1.2em;
+}
+
+.search input {
+	border: 0 !important;
+	height: 100%;
+	box-shadow: none !important;
+	padding-top: 1em;
+}
+
+span.input-group-btn button.btn.btn-default {
+	background-image: none;
+	border: 0 !important;
+	height: 100%;
+	box-shadow: none !important;
+	padding-top: 1em;
+}
+
+.boxDash {
+	background-color: #fff;
+	height: 300px;
+	padding-left: 1.4em;
+	padding-right: 1.4em;
+	padding-top: .7em;
+	margin-top: 7px;
+	margin-bottom: 1.2em;
+	position: relative;
+}
+
+.baxDashHeader {
+	height: 3em;
+    border-bottom: 1px solid #d4d4d4;
+    margin-left: -1.4em;
+    margin-right: -1.4em;
+    padding-bottom: 2em
+}
+
+.boxDash h4 {
+	font-size: 1.5em;
+	padding-left: 1.3em;
+	text-transform: uppercase;
+	/* color: #007cb6; */
+	color: #d4d4d4;
+}
+
+.animais {
+
+}
+
+.consultas {
+
+}
+
+/* ########################################################
+			  		DASH 2
+######################################################## */
+
+#dash2 {
+	margin-left: 8%;
+    margin-top: 0;
+    padding: 0 0em;
+}
+
+.search {
+	background-color: #fff;
+	height: 5em;
+	margin-bottom: 1.2em;
+	padding: 10px 1.4em;
+	margin-top: 1.2em;
+}
+
+.search input {
+	border: 0 !important;
+	height: 100%;
+	box-shadow: none !important;
+	padding-top: 1em;
+}
+
+span.input-group-btn button.btn.btn-default {
+	background-image: none;
+	border: 0 !important;
+	height: 100%;
+	box-shadow: none !important;
+	padding-top: 1em;
+}
+
+.boxSecoes {
+	position: relative;
+}
+
+.boxSecoes h4 {
+	font-size: 1.5em;
+	text-transform: uppercase;
+	color: #fff;
+	font-weight: normal;
+}
+
+.boxSecoes img {
+	max-height: 50px;
+}
+
+.animais {
+	background-color: #ffb848;
+	min-height: 150px;
+	text-align: center;
+	padding: 2em;
+}
+
+.rotinas {
+	background-color: #27a9e3;
+	min-height: 150px;
+	text-align: center;
+	padding: 2em;
+}
+
+.consultas {
+	background-color: #28b779;
+	min-height: 150px;
+	text-align: center;
+	padding: 2em;
+}
+
+.relatorios {
+	background-color: #e7191b;
+	min-height: 150px;
+	text-align: center;
+	padding: 2em;
+}
+
+/* ########################################################
+			  	MANTER ANIMAIS
+######################################################## */
+
+
+
+
+/* ########################################################
+			  	CLASSES GENÉRICAS
+######################################################## */
+
+.center {
+	text-align: center !important;
+}

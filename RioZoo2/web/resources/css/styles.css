@@ -1,0 +1,615 @@
+@font-face {
+  font-family: 'ionicons';
+  src: url('../fonts/ionicons.eot');
+  src: url('../fonts/ionicons.eot') format('embedded-opentype'),
+       url('../fonts/ionicons.woff') format('woff'),
+       url('../fonts/ionicons.ttf') format('truetype'),
+       url('../fonts/ionicons.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {background-color: #efefef;}
+
+/* ########################################################
+			  			HEADER
+######################################################## */
+
+.header {
+	height: 80px;
+	background-color: #fff;
+	margin: 0;
+	padding: 10px;
+	margin-bottom: 1.2em;
+}
+
+.header img {height: 60px;}
+
+/* ########################################################
+			  			NAVBAR
+######################################################## */
+
+.navbarLeft {
+	width: 7.5%;
+	background-color: #fff;
+	min-height: 100%;
+	position: fixed;
+	left: 0;
+	/* float: left; */
+	z-index: 1000;
+	margin: 0 !important;
+}
+
+.navbarLeft img {
+	height: 3.750em;
+}
+
+.navbarLeft img.usuario {
+	height: 2.5em;
+        /*clear: both;*/
+}
+
+.navbarLeft:hover {
+	width: 20%;
+	box-shadow: 2px 2px 20px #d4d4d4;
+        color: #d4d4d4;
+}
+
+.navbarLeft:hover a {
+	display: block;
+}
+
+.navbarLeft .logo {
+	text-align: center !important;
+	margin: 0 auto;
+	padding-top: 10px;
+}
+
+.navbarLeft ul {
+	width: 100%;
+	list-style: none;
+	padding: 0 !important;
+	border: 0;
+	margin: 20px 0 0 0 !important;
+}
+
+.navbarLeft ul li a {
+    display: none;
+}
+
+.navbarLeft ul li:hover a {
+    display: block;
+}
+
+.navbarLeft ul li {
+	width: 100%;
+	padding: 10px 0;
+	font-size: 1.5em;
+	color: #d4d4d4;
+	text-align: center;
+	margin: 0;
+	border-bottom: 1px solid #efefef;
+}
+
+.navbarLeft ul li:nth-child(1) img {
+	max-height: 80%;
+}
+
+.navbarLeft ul li img.sair {
+	height:  100%;
+}
+
+.navbarLeft ul li span {
+	display: none;
+}
+
+.navbarLeft:hover ul li span {
+	display: inline-block;
+	color: #d4d4d4;
+	font-size: 16px;
+	padding-left: 5px;
+}
+
+.navbarLeft:hover ul li:hover span {
+	color: #fff;
+}
+
+.navbarLeft ul li:hover {
+	width: 100%;
+	background-color: #ffc10e;
+	color: #fff;
+	box-shadow: 5px 5px 5px #d4d4d4;
+}
+
+.navbarLeft a{
+	color: #d4d4d4;
+	text-decoration: none;
+}
+
+.navbarLeft ul li:hover a {
+	color: #fff;
+}
+
+.navbarLeft ul li:active {
+	width: 100%;
+	background-color: #ffc10e;
+	color: #fff;
+	box-shadow: none;
+}
+
+/* ########################################################
+			  		DASH 2
+######################################################## */
+
+#dash2 {
+    margin: 0 8%;
+    padding: 0 10px 20px 0px;
+    width: 92.5%;
+    float: left;
+}
+
+.search {
+	background-color: #fff;
+	height: 5em;
+	margin-bottom: 1.2em;
+	padding: 10px 1.4em;
+	margin-top: 1.2em;
+}
+
+.search input {
+	border: 0 !important;
+	height: 100%;
+	box-shadow: none !important;
+	padding-top: 1em;
+}
+
+span.input-group-btn button.btn.btn-default {
+	background-image: none;
+	background-color: transparent;
+	border: 0 !important;
+	height: 100%;
+	box-shadow: none !important;
+	font-size: 3rem;
+	margin: 0;
+	padding: 5px 0;
+}
+
+.boxSecoes {position: relative;}
+
+.boxSecoes h4 {
+	font-size: 1.5em;
+	text-transform: uppercase;
+	color: #fff !important;
+	font-weight: normal;
+}
+
+.boxSecoes img {max-height: 50px;}
+
+.animais {
+	background-color: #ffc10e;
+	min-height: 150px;
+	text-align: center;
+	padding: 2em;
+	margin-bottom: 20px;
+}
+
+.animais:hover {
+	box-shadow: 5px 5px 2px #d4d4d4;
+	border-bottom: 1px solid #efefef;
+	cursor: pointer;
+}
+
+.consultas {
+	background-color: #28b779;
+	min-height: 150px;
+	text-align: center;
+	padding: 2em;
+	margin-bottom: 20px;
+}
+
+.consultas:hover {
+	box-shadow: 5px 5px 2px #d4d4d4;
+	border-bottom: 1px solid #efefef;
+	cursor: pointer;
+}
+
+.relatorios {
+	background-color: #27a9e3;
+	min-height: 150px;
+	text-align: center;
+	padding: 2em;
+	margin-bottom: 20px;
+}
+
+.relatorios:hover {
+	box-shadow: 5px 5px 2px #d4d4d4;
+	border-bottom: 1px solid #efefef;
+	cursor: pointer;
+}
+
+.funcionarios {
+	background-color: #0acec4;
+	min-height: 150px;
+	text-align: center;
+	padding: 2em;
+	margin-bottom: 20px;
+}
+
+.funcionarios:hover {
+	box-shadow: 5px 5px 2px #d4d4d4;
+	border-bottom: 1px solid #efefef;
+	cursor: pointer;
+}
+
+.vacinas {
+	background-color: #D80027;
+	min-height: 150px;
+	text-align: center;
+	padding: 2em;
+	margin-bottom: 20px;
+}
+
+.vacinas:hover {
+	box-shadow: 5px 5px 2px #d4d4d4;
+	border-bottom: 1px solid #efefef;
+	cursor: pointer;
+}
+
+.medicamentos {
+	background-color: #7e26cc;
+	min-height: 150px;
+	text-align: center;
+	padding: 2em;
+	margin-bottom: 20px;
+}
+
+.medicamentos:hover {
+	box-shadow: 5px 5px 2px #d4d4d4;
+	border-bottom: 1px solid #efefef;
+	cursor: pointer;
+}
+
+.rotinas {
+	background-color: #ff8011;
+	min-height: 150px;
+	text-align: center;
+	padding: 2em;
+	margin-bottom: 20px;
+}
+
+.rotinas:hover {
+	box-shadow: 5px 5px 2px #d4d4d4;
+	border-bottom: 1px solid #efefef;
+	cursor: pointer;
+}
+
+.equipes {
+	background-color: #fc23d1;
+	min-height: 150px;
+	text-align: center;
+	padding: 2em;
+	margin-bottom: 20px;
+}
+
+.equipes:hover {
+	box-shadow: 5px 5px 2px #d4d4d4;
+	border-bottom: 1px solid #efefef;
+	cursor: pointer;
+}
+
+/* ########################################################
+			  		CORPO
+######################################################## */
+
+.corpo {
+	margin-left: 7%;
+	background-color: #fff;
+	padding: 2em;
+}
+
+.corpo h4 {
+	font-size: 2em;
+	color: black;
+	text-transform: uppercase;
+	font-weight: normal;
+}
+
+.tituloPage {
+	position: relative;
+}
+
+/* ########################################################
+			  	TABELA PADRAO
+######################################################## */
+
+table.tabela-padrao thead tr th {
+	background-color: #ffc10e;
+	padding: 5px;
+	color: #fff;
+}
+
+table.tabela-padrao a {
+	padding-right: 5px;
+	color: #d4d4d4;
+}
+
+a span.ion-medkit:hover  {
+	color: #28b779;
+}
+
+a span.ion-clock:hover  {
+	color: #27a9e3;
+}
+
+a span.ion-edit:hover  {
+	color: #ffc10e;
+}
+
+a span.ion-trash-a:hover  {
+	color: #e7191b;
+}
+
+
+/* ########################################################
+			  		ANIMAIS
+######################################################## */
+
+.add-animal {
+	display: none;
+	margin-bottom: 3em;
+}
+
+.pesquisa-animal {
+	display: none;
+}
+
+/* ########################################################
+			  		ROTINAS
+######################################################## */
+
+.add-rotina {
+	display: none;
+	margin-bottom: 3em;
+}
+
+/* ########################################################
+			  		EQUIPES
+######################################################## */
+
+.add-equipe {
+    display: none;
+    margin-bottom: 3em;
+}
+
+/* ########################################################
+			  		CONSULTAS
+######################################################## */
+
+.add-consulta {
+	display: none;
+	margin-bottom: 3em;
+}
+
+table.tabela-consultas thead tr th {
+	background-color: #ffc10e;
+	padding: 5px;
+	color: #fff;
+}
+
+table.tabela-padrao a {
+	padding-right: 5px;
+	color: #d4d4d4;
+}
+
+table.tabela-consultas span  {
+	padding-right: 5px;
+	color: #d4d4d4;
+}
+
+span.ion-ios-compose:hover  {
+	color: #27a9e3;
+	cursor: pointer;
+}
+
+span.ion-ios-list:hover  {
+	color: #28b779;
+	cursor: pointer;
+}
+
+table.tabela-padrao span {
+	padding-right: 5px;
+	color: #d4d4d4;
+}
+
+
+
+/* ########################################################
+			  		VACINAS
+######################################################## */
+
+.add-vacina {
+	display: none;
+        margin-bottom: 3em;
+}
+
+/* ########################################################
+			  		REMEDIOS
+######################################################## */
+
+.add-medicamento {
+	display: none;
+}
+
+/* ########################################################
+			  		RELATORIOS
+######################################################## */
+
+.boxRelatorios {position: relative;}
+
+.boxRelatorios h4 {
+	font-size: 1em;
+	text-transform: uppercase;
+	color: #fff !important;
+	font-weight: normal;
+}
+
+.boxRelatorios img {max-height: 50px;}
+
+#boletim-diario {
+	display: none;
+	margin-bottom: 20px;
+}
+
+#registro-clinico {
+	display: none;
+	margin-bottom: 20px;
+}
+
+#boletim-saude-animal {
+	display: none;
+	margin-bottom: 20px;
+}
+
+.boletim-diario {
+	background-color: #ffc10e;
+	min-height: 150px;
+	text-align: center;
+	padding: 2em;
+	margin-bottom: 20px;
+}
+
+.boletim-diario:hover {
+	box-shadow: 5px 5px 2px #d4d4d4;
+	border-bottom: 1px solid #efefef;
+	cursor: pointer;
+}
+
+.registro-clinico {
+	background-color: #28b779;
+	min-height: 150px;
+	text-align: center;
+	padding: 2em;
+	margin-bottom: 20px;
+}
+
+.registro-clinico:hover {
+	box-shadow: 5px 5px 2px #d4d4d4;
+	border-bottom: 1px solid #efefef;
+	cursor: pointer;
+}
+
+.boletim-saude-animal {
+	background-color: #0acec4;
+	min-height: 150px;
+	text-align: center;
+	padding: 2em;
+	margin-bottom: 20px;
+}
+
+.boletim-saude-animal:hover {
+	box-shadow: 5px 5px 2px #d4d4d4;
+	border-bottom: 1px solid #efefef;
+	cursor: pointer;
+}
+
+
+
+/* ########################################################
+			  		FUNCIONARIOS
+######################################################## */
+
+.add-funcionario {
+    display: none;
+}
+
+.addVet {
+    display: none;
+}
+
+.addTratador {
+    display: none;
+}
+
+.addAdmin {
+    display: none;
+}
+
+/* ########################################################
+			  	CLASSES GENÉRICAS
+######################################################## */
+
+.modal-header {
+	background-color: #ffc10e;
+	color: #fff;
+	text-align: center;
+}
+
+hr {margin-top: 10px;}
+
+hr.destaque {border-color: #ffc10e;margin-top: 10px;}
+
+.radio-inline {padding-top: 6px;}
+
+.subsub {font-size: 1.5em;}
+
+.form-control {margin-bottom: 15px;}
+
+.form-control:focus {border-color: #ffc10e;box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(255, 193, 14,.6);}
+
+.right {text-align: right;}
+
+.fRight {float: right;}
+
+.fLeft {float: left;}
+
+.mTop-20 {margin-top: 1.250em;}
+
+.mTop-40 {margin-top: 2.500em;}
+
+.center {text-align: center !important;}
+
+.right {text-align: right;}
+
+.fRight {float: right;}
+
+.fLeft {float: left;}
+
+.mTop-20 {margin-top: 1.250em;}
+
+.mTop-40 {margin-top: 2.500em;}
+
+/* ########################################################
+			  		BOTOES
+######################################################## */
+
+.btn-add {
+	position: absolute;
+	right: 15px;
+	top: 10px;
+}
+
+.btn-padrao {
+	background-color: #ffc10e;
+	color: #fff;
+	margin-left: 10px;
+}
+
+.btn-verde {
+	background-color: #28b779;
+	color: #fff;
+	margin-left: 10px;
+}
+
+.btn-azul {
+	background-color: #27a9e3;
+	color: #fff;
+	margin-left: 10px;
+}
+
+.btn-vermelho {
+	background-color: #e7191b;
+	color: #fff;
+	margin-left: 10px;
+}
+
+

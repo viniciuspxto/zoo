@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Rio Zoo Intranet</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Sistema criado para trabalho de faculdade, disciplina POOA. Todos os direitos reservados regasguardados, não permitindo a reutilização sem permissão prévia."/>
+        <meta name="keywords" content="HTML,CSS,XML,JavaScript" />
+        <meta name="author" content="Vinícius Peixoto" />
+
+        <!--CSS BOOTSTRAP-->
+        <h:outputStylesheet library="bootstrap/css" name="bootstrap.min.css"  />
+        <!--CSS ION ICONS-->
+        <h:outputStylesheet library="css" name="ionicons.min.css"  />
+        <!--CSS LOGIN-->
+        <h:outputStylesheet library="css" name="styles.css"  />
+
+    </h:head>
+
+    <body>
+        <div class="container-fluid">
+
+            <nav>
+                <div class="row navbarLeft">
+                    <div class="col-md-12 logo">
+                        <h:graphicImage alt="Logo Rio Zoo" class="logo" library="img" name="logo-riozoo.png"></h:graphicImage>
+                    </div>
+                    <div class="col-md-12">
+                        <ul class="navbar">
+                            <h:form>
+                                <li><h:graphicImage alt="Perfil do Usuário" class="usuario" library="img" name="user.svg"></h:graphicImage> <h:commandLink action="#{usuarioBean.perfilUsuario()}" value="Perfil Usuário" /></li>
+                                <li><i class="ion-android-home"></i> <h:commandLink action="#{dashBean.dashboard()}" value="Dashboard" /></li>
+                                <li><i class="ion-ios-paw"></i> <h:commandLink action="#{animalBean.manterAnimal()}" value="Animais" /></li>
+                                <li><i class="ion-medkit"></i> <h:commandLink action="#{consultaBean.manterConsulta()}" value="Consultas" /></li>
+                                <li><i class="ion-ios-paper"></i> <h:commandLink action="#{relatorioBean.relatorio()}" value="Relatórios" /></li>
+                                <li><i class="ion-person-stalker"></i> <h:commandLink action="#{funcionarioBean.manterFuncionario()}" value="Funcionários" /></li>
+                                <li><i class="ion-power" aria-hidden="true"></i> <h:commandLink  value="Sair" /></li>
+                            </h:form>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div id="content" class="left_content">
+                <ui:insert name="content"></ui:insert>
+            </div>
+
+
+        </div>
+
+        <!--JQUERY-->
+        <h:outputScript library="js" name="jquery.min.js" />
+        <!--BOOTSTRAP JS-->
+        <h:outputScript library="bootstrap/js" name="bootstrap.min.js" />
+
+        <script type="text/javascript">
+            jQuery(document).ready(function ($) {
+
+                // TOOLTIPS
+                $("[data-tt=tooltip]").tooltip();
+
+                // MANTER FUNCIONARIOS
+                $("#add-funcionario").click(function () {
+                    $('.add-funcionario').css('display', 'block');
+                    $('html, body').animate({
+                        scrollTop: $(".add-funcionario").offset().top
+                    }, 500);
+                });
+
+                $("#pesquisa-funcionario").click(function () {
+                    $('.pesquisa-funcionario').css('display', 'block');
+                });
+
+                $(".select-cargo").change(function () {
+                    if ($(this).val() == 'veterinario') {
+                        $(".addVet").css('display', 'block');
+                        $(".addTratador").css('display', 'none');
+                        $(".addAdmin").css('display', 'none');
+                    }
+
+                    if ($(this).val() == 'tratador') {
+                        $(".addVet").css('display', 'none');
+                        $(".addTratador").css('display', 'block');
+                        $(".addAdmin").css('display', 'none');
+                    }
+
+                    if ($(this).val() == 'admin') {
+                        $(".addVet").css('display', 'none');
+                        $(".addTratador").css('display', 'none');
+                        $(".addAdmin").css('display', 'block');
+                    }
+                });
+
+                // MANTER ANIMAIS
+                $("#add-animal").click(function () {
+                    $('.add-animal').css('display', 'block');
+                    $('html, body').animate({
+                        scrollTop: $(".add-animal").offset().top
+                    }, 500);
+                });
+
+                $("#pesquisa-animal").click(function () {
+                    $('.pesquisa-animal').css('display', 'block');
+                });
+
+                // MANTER ANIMAIS
+                $("#add-equipe").click(function () {
+                    $('.add-equipe').css('display', 'block');
+                    $('html, body').animate({
+                        scrollTop: $(".add-equipe").offset().top
+                    }, 500);
+                });
+                
+                // MANTER VACINAS
+                $("#add-vacina").click(function () {
+                    $('.add-vacina').css('display', 'block');
+                    $('html, body').animate({
+                        scrollTop: $(".add-vacina").offset().top
+                    }, 500);
+                });
+                
+                // MANTER MEDICAMENTOS
+                $("#add-medicamento").click(function () {
+                    $('.add-medicamento').css('display', 'block');
+                    $('html, body').animate({
+                        scrollTop: $(".add-medicamento").offset().top
+                    }, 500);
+                });
+                
+                // MANTER MEDICAMENTOS
+                $("#add-rotina").click(function () {
+                    $('.add-rotina').css('display', 'block');
+                    $('html, body').animate({
+                        scrollTop: $(".add-rotina").offset().top
+                    }, 500);
+                });
+
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,96 @@
+body {
+  background-image: url('../img/bg-login2.jpg');
+  background-size:cover;
+}
+
+.login-dark {
+  min-height:100%;
+  min-width: 100%;
+  
+  /* position:relative; */
+}
+
+.login-dark form {
+  max-width:320px;
+  width:90%;
+  background-color: rgba(0, 0, 0, .7);
+  padding:40px;
+  border-radius:4px;
+  transform:translate(-50%, -50%);
+  position:absolute;
+  top:50%;
+  left:50%;
+  color:#fff;
+  box-shadow:3px 3px 4px rgba(0,0,0,0.2);
+}
+
+.login-dark .illustration {
+  text-align:center;
+  padding:10px 0 20px;
+  font-size:100px;
+  color:#ffa600;
+}
+
+.login-dark form .form-control {
+  background:none;
+  border:none;
+  border-bottom:1px solid #434a52;
+  border-radius:0;
+  box-shadow:none;
+  outline:none;
+  color:inherit;
+}
+
+.login-dark form input[type=button].btn-primary {
+  background:#ffa600;
+  border-radius:4px;
+  border: 0;
+  padding:11px 80px;
+  width: 100%;
+  margin-top:26px;
+  text-shadow:none;
+  outline:none;
+}
+
+.login-dark form input[type=button].btn-primary:hover {
+  background:#ffc10e;
+  outline:none;
+  border: 0;
+  color: #220b03;
+}
+
+.login-dark form a {
+  color: #220b03;
+}
+
+.login-dark form .btn-primary a:hover {
+  color: #220b03;
+  text-decoration: none;
+}
+
+.login-dark form .btn-primary:hover, .login-dark form .btn-primary:active {
+  background:#ffc10e;
+  outline:none;
+  border: 0;
+  color: #220b03;
+}
+
+.login-dark form .forgot {
+  display:block;
+  text-align:center;
+  font-size:12px;
+  color:#ffa600;
+  opacity:0.9;
+  text-decoration:none;
+}
+
+.login-dark form .forgot:hover, .login-dark form .forgot:active {
+  opacity:1;
+  text-decoration:none;
+  color:#fff;
+}
+
+.login-dark form .btn-primary:active {
+  transform:translateY(1px);
+}
+

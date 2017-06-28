@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rio Zoo - Manter Funcionários</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+
+        <nav>
+            <div class="row navbarLeft">
+                <div class="col-md-12 logo">
+                    <a href="dash.html"><img src="assets/img/logo-riozoo.png" alt=""></a>
+                </div>
+                <div class="col-md-12">
+                    <ul class="navbar">
+                        <li><a href="perfil-usuario.html"><img src="assets/img/user.svg" alt=""> <span>Perfil Usuário</span></a></li>
+                        <li><a href="dash.html"><i class="ion-android-home"></i> <span>Dashboard</span></a></li>
+                        <li><a href="manter-animais.html"><i class="ion-ios-paw"></i> <span>Animais</span></a></li>
+                        <li><a href="manter-consultas.html"><i class="ion-medkit"></i> <span>Consultas</span></a></li>
+                        <li><a href="relatorios.html"><i class="ion-ios-paper"></i> <span>Relatórios</span></a></li>
+                        <li><a href="manter-funcionarios.html"><i class="ion-person-stalker"></i> <span>Funcionários</span></a></li>
+                        <li><a href="index.html"><i class="ion-power" aria-hidden="true"></i> <span>Sair</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <article>
+            <div class="container-fluid">
+                <div class="corpo mTop-20">
+                    <div class="row tituloPage">
+                        <div class="col-md-12">
+                            <h4>Manter Funcionários</h4>
+                            <hr class="destaque"/>
+                            <button id="add-funcionario" class="btn btn-sm btn-verde btn-add"> <span class="ion-person-add"> </span>Add Novo Funcionário</button>
+                        </div>
+                    </div>
+                    
+                    <div class="row funcionario">
+                        <form action="">
+                            <div class="col-md-12 mTop-20">
+                                <span class="subsub">Encontre um funcionário</span>
+                                <hr/>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="" class="control-label">Matrícula</label>
+                                <input type="text" class="form-control" placeholder="Nº Matrícula">
+                            </div>
+                            <div class="col-md-3">
+                                <label for="" class="control-label">Cargo</label>
+                                <select name="select-cargo" id="select-cargo" class="form-control">
+                                    <option value="">selecione</option>
+                                    <option value="veterinario">Veterinário</option>
+                                    <option value="tratador">Tratador</option>
+                                    <option value="tratador">Administração</option>
+                                </select>
+                            </div>
+                            <div class="col-md-5">
+                                <label for="" class="control-label">Nome</label>
+                                <input type="text" class="form-control" placeholder="Nome do funcionário">
+                            </div>
+                        </form>
+                        <div class="col-md-12 right">
+                            <button id="pesquisa-funcionario" class="btn btn-azul"> <span class="ion-search"> </span>Pesquisar</button>
+                        </div>
+                    </div>
+
+                    <div class="row pesquisa-funcionario mTop-40">
+                        <div class="col-md-12" style="overflow-x: auto">
+                            <table class="table tabela-padrao table-striped table-responsive">
+                                <thead>
+                                    <tr>
+                                        <th>Matrícula</th>
+                                        <th>Nome</th>
+                                        <th>Cargo</th>
+                                        <th>Data Nascimento</th>
+                                        <th>Equipe</th>
+                                        <th>Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>28765</td>
+                                        <td>José da Silva</td>
+                                        <td>Trtatador</td>
+                                        <td>19/06/2000</td>
+                                        <td>Répteis</td>
+                                        <td>
+                                            <a href=""><span class="ion-medkit" title="Marcar Consulta" data-tt="tooltip" data-placement="top"></span></a>
+
+                                            <a href=""><span class="ion-clock" title="Ver Rotina" data-tt="tooltip" data-placement="top"></span></a>
+
+                                            <a href=""><span class="ion-edit" title="Editar" data-tt="tooltip" data-placement="top"></span></a>
+
+                                            <a href=""><span class="ion-trash-a" title="Excluir" data-tt="tooltip" data-placement="top"></span></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>28765</td>
+                                        <td>Maria da Silva</td>
+                                        <td>Veterinário</td>
+                                        <td>19/06/2000</td>
+                                        <td>Felinos</td>
+                                        <td>
+                                            <a href=""><span class="ion-medkit" title="Marcar Consulta" data-tt="tooltip" data-placement="top"></span></a>
+
+                                            <a href=""><span class="ion-clock" title="Ver Rotina" data-tt="tooltip" data-placement="top"></span></a>
+
+                                            <a href=""><span class="ion-edit" title="Editar" data-tt="tooltip" data-placement="top"></span></a>
+
+                                            <a href=""><span class="ion-trash-a" title="Excluir" data-tt="tooltip" data-placement="top"></span></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>28765</td>
+                                        <td>Joana da Silva</td>
+                                        <td>Veterinário</td>
+                                        <td>19/06/2000</td>
+                                        <td>Felinos</td>
+                                        <td>
+                                            <a href=""><span class="ion-medkit" title="Marcar Consulta" data-tt="tooltip" data-placement="top"></span></a>
+
+                                            <a href=""><span class="ion-clock" title="Ver Rotina" data-tt="tooltip" data-placement="top"></span></a>
+
+                                            <a href=""><span class="ion-edit" title="Editar" data-tt="tooltip" data-placement="top"></span></a>
+
+                                            <a href=""><span class="ion-trash-a" title="Excluir" data-tt="tooltip" data-placement="top"></span></a>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="add-funcionario corpo mTop-20">
+                    <form action="">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4>Adicionar novo funcionário</h4>
+                                <hr class="destaque"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <span class="subsub">Dados Cargo</span>
+                                <hr/>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="" class="control-label">Matrícula</label>
+                                <input type="text" class="form-control" placeholder="Nº Matrícula">
+                            </div>
+                            <div class="col-md-2">
+                                <label for="" class="control-label">Cargo</label>
+                                <select name="select-cargo" id="select-cargo" class="form-control select-cargo">
+                                    <option value="">selecione</option>
+                                    <option value="veterinario">Veterinário</option>
+                                    <option value="tratador">Tratador</option>
+                                    <option value="admin">Administração</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2 crmv">
+                                <label for="" class="control-label">CRMV</label>
+                                <input type="text" class="form-control" placeholder="Nº CRMV">
+                            </div>
+                            <div class="col-md-2 crmv">
+                                <label for="" class="control-label">Data Emissão</label>
+                                <input type="text" class="form-control" placeholder="Data Nascimento">
+                            </div>
+                            <div class="col-md-2 equipe">
+                                <label for="" class="control-label">Equipe</label>
+                                <input type="text" class="form-control" placeholder="Nome da Equipe">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 mTop-20">
+                                <span class="subsub">Dados Pessoais</span>
+                                <hr/>
+                            </div>
+                            <div class="col-md-5">
+                                <label for="" class="control-label">Nome Completo</label>
+                                <input type="text" class="form-control" placeholder="Nome do animal">
+                            </div>
+                            <div class="col-md-2">
+                                <label for="" class="control-label">Data de Nascimento</label>
+                                <input type="text" class="form-control" placeholder="dd/mm/aaaa">
+                            </div>
+                            <div class="col-md-2">
+                                <label for="" class="control-label" style="display: block">Sexo</label>
+                                <label class="radio-inline">
+                                  <input type="radio" name="optradio">Homem
+                                </label>
+                                <label class="radio-inline">
+                                  <input type="radio" name="optradio">Mulher
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 mTop-20">
+                                <span class="subsub">Endereço</span>
+                                <hr/>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="" class="control-label">CEP</label>
+                                <input type="text" class="form-control" placeholder="xxxxx-xxx">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="" class="control-label">Logradouro</label>
+                                <input type="text" class="form-control" placeholder="Av., Rua, etc...">
+                            </div>
+                            <div class="col-md-1">
+                                 <label for="" class="control-label">Número</label>
+                                <input type="text" class="form-control" placeholder="nº">
+                            </div>
+                            <div class="col-md-2">
+                                 <label for="" class="control-label">Complemento</label>
+                                <input type="text" class="form-control" placeholder="bloco, apt, etc...">
+                            </div>
+                            <div class="col-md-3">
+                                 <label for="" class="control-label">Cidade</label>
+                                <input type="text" class="form-control" placeholder="Cidade">
+                            </div>
+                            <div class="col-md-1">
+                                 <label for="" class="control-label">UF</label>
+                                <input type="text" class="form-control" placeholder="UF">
+                            </div>
+                            <div class="col-md-2">
+                                 <label for="" class="control-label">Telefone</label>
+                                <input type="text" class="form-control" placeholder="(xx) x xxxx xxxx">
+                            </div>
+                            <div class="col-md-12 right">
+                                <button id="cancelar" class="btn btn-sm btn-vermelho"> <span class="ion-close"> </span>Cancelar</button>
+                                <button id="novo-animal" class="btn btn-sm btn-verde"> <span class="ion-person-add"> </span>Adicionar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </article>
+           
+    </div>
+
+
+
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            
+            // TOOLTIPS
+            $("[data-tt=tooltip]").tooltip();
+
+            // MANTER FUNCIONARIOS
+            $("#add-funcionario").click(function() {
+                $('.add-funcionario').css('display', 'block');
+                $('html, body').animate({
+                    scrollTop: $(".add-funcionario").offset().top
+                }, 500);
+            });
+
+            $("#pesquisa-funcionario").click(function() {
+                $('.pesquisa-funcionario').css('display', 'block');
+            });
+
+            $( ".select-cargo" ).change(function() {
+              if($(this).val()=='veterinario'){
+                $('.equipe').css('display', 'none');
+                $('.crmv').css('display', 'block');
+              }
+
+              if($(this).val()=='tratador'){
+                $('.crmv').css('display', 'none');
+                $('.equipe').css('display', 'block');
+              }
+
+              if($(this).val()=='admin'){
+                $('.crmv').css('display', 'none');
+                $('.equipe').css('display', 'none');
+              }
+            });
+
+        });
+    </script>
+</body>
+
+</html>

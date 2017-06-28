@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sistema criado para trabalho de faculdade, disciplina POOA. Todos os direitos reservados regasguardados, não permitindo a reutilização sem permissão prévia.">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="author" content="Vinícius Peixoto">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+
+        <nav>
+            <div class="row navbarLeft">
+                <div class="col-md-12 logo">
+                    <a href="dash.html"><img src="assets/img/logo-riozoo.png" alt=""></a>
+                </div>
+                <div class="col-md-12">
+                    <ul class="navbar">
+                        <li><a href="perfil-usuario.html"><img src="assets/img/user.svg" alt=""> <span>Perfil Usuário</span></a></li>
+                        <li><a href="dash.html"><i class="ion-android-home"></i> <span>Dashboard</span></a></li>
+                        <li><a href="manter-animais.html"><i class="ion-ios-paw"></i> <span>Animais</span></a></li>
+                        <li><a href="manter-consultas.html"><i class="ion-medkit"></i> <span>Consultas</span></a></li>
+                        <li><a href="relatorios.html"><i class="ion-ios-paper"></i> <span>Relatórios</span></a></li>
+                        <li><a href="manter-funcionarios.html"><i class="ion-person-stalker"></i> <span>Funcionários</span></a></li>
+                        <li><a href="index.html"><i class="ion-power" aria-hidden="true"></i> <span>Sair</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <article>
+            <div class="container-fluid">
+                <div class="corpo mTop-20">
+                    <div class="row tituloPage">
+                        <div class="col-md-12">
+                            <h4>Manter Animais</h4>
+                            <hr class="destaque"/>
+                            <button id="add-animal" class="btn btn-sm btn-verde btn-add"> <span class="ion-plus-circled"> </span>Add Novo Animal</button>
+                        </div>
+                    </div>
+                    
+                    <div class="row animal mTop-20">
+                        <form action="">
+                            <div class="col-md-12">
+                                <span class="subsub">Encontre um animal</span>
+                                <hr/>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="" class="control-label">Código do Animal</label>
+                                <input type="text" class="form-control" placeholder="Código do animal">
+                            </div>
+                            <div class="col-md-5">
+                                <label for="" class="control-label">Nome do Animal</label>
+                                <input type="text" class="form-control" placeholder="Nome do animal">
+                            </div>
+                            <div class="col-md-5">
+                                <label for="" class="control-label">Nome do Tratador</label>
+                                <input type="text" class="form-control" placeholder="Nome do tratador">
+                            </div>
+                        </form>
+                        <div class="col-md-12 right">
+                            <button id="pesquisa-animal" class="btn btn-azul"> <span class="ion-search"> </span>Pesquisar</button>
+                        </div>
+                    </div>
+
+                    <div class="row pesquisa-animal mTop-40">
+                        <div class="col-md-12">
+                            <span class="subsub">Animais Atuais</span>
+                            <hr/>
+                        </div>
+                        <div class="col-md-12" style="overflow-x: auto">
+                            <table class="table tabela-padrao table-striped table-responsive">
+                                <thead>
+                                    <tr>
+                                        <th>Código</th>
+                                        <th>Espécie</th>
+                                        <th>Nome Animal</th>
+                                        <th>Tratador Responsável</th>
+                                        <th>Data Nascimento</th>
+                                        <th>Origem</th>
+                                        <th>Peso (kG)</th>
+                                        <th>Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>28765</td>
+                                        <td>Onça-pintada</td>
+                                        <td>Juma Marruara</td>
+                                        <td>José da Silva</td>
+                                        <td>19/06/2000</td>
+                                        <td>Brasil</td>
+                                        <td>96</td>
+                                        <td>
+                                            <a href=""><span class="ion-medkit" title="Marcar Consulta" data-tt="tooltip" data-placement="top"></span></a>
+
+                                            <a href="rotina.html"><span class="ion-clock" title="Ver Rotina" data-tt="tooltip" data-placement="top"></span></a>
+
+                                            <a href=""><span class="ion-edit" title="Editar" data-tt="tooltip" data-placement="top"></span></a>
+
+                                            <a href=""><span class="ion-trash-a" title="Excluir" data-tt="tooltip" data-placement="top"></span></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>28765</td>
+                                        <td>Jaguatirica</td>
+                                        <td>Jurema</td>
+                                        <td>José da Silva</td>
+                                        <td>19/06/2000</td>
+                                        <td>Brasil</td>
+                                        <td>96</td>
+                                        <td>
+                                            <a href=""><span class="ion-medkit" title="Marcar Consulta" data-tt="tooltip" data-placement="top"></span></a>
+
+                                            <a href="rotina.html"><span class="ion-clock" title="Ver Rotina" data-tt="tooltip" data-placement="top"></span></a>
+
+                                            <a href=""><span class="ion-edit" title="Editar" data-tt="tooltip" data-placement="top"></span></a>
+
+                                            <a href=""><span class="ion-trash-a" title="Excluir" data-tt="tooltip" data-placement="top"></span></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>28765</td>
+                                        <td>Pa√ão</td>
+                                        <td>Firmino</td>
+                                        <td>José da Silva</td>
+                                        <td>19/06/2000</td>
+                                        <td>Brasil</td>
+                                        <td>96</td>
+                                        <td>
+                                            <a href=""><span class="ion-medkit" title="Marcar Consulta" data-tt="tooltip" data-placement="top"></span></a>
+
+                                            <a href="rotina.html"><span class="ion-clock" title="Ver Rotina" data-tt="tooltip" data-placement="top"></span></a>
+
+                                            <a href=""><span class="ion-edit" title="Editar" data-tt="tooltip" data-placement="top"></span></a>
+
+                                            <a href=""><span class="ion-trash-a" title="Excluir" data-tt="tooltip" data-placement="top"></span></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="add-animal corpo mTop-20">
+                    <div class="row">
+                        <form action="">
+                            <div class="col-md-12">
+                                <h4>Adicionar novo animail</h4>
+                                <hr class="destaque"/>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="" class="control-label">Código do Animal</label>
+                                <input type="text" class="form-control" placeholder="Código do animal">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="" class="control-label">Nome do Animal</label>
+                                <input type="text" class="form-control" placeholder="Nome do animal">
+                            </div>
+                            <div class="col-md-4">
+                                 <label for="" class="control-label">Espécie</label>
+                                <input type="text" class="form-control" placeholder="Espécie">
+                            </div>
+                            <div class="col-md-2">
+                                <label for="" class="control-label">Data de Nascimento</label>
+                                <input type="text" class="form-control" placeholder="Data Nascimento">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="" class="control-label">Nome do Tratador</label>
+                                <input type="text" class="form-control" placeholder="Nome do tratador">
+                            </div>
+                            <div class="col-md-3">
+                                 <label for="" class="control-label">Origem</label>
+                                <input type="text" class="form-control" placeholder="Origem">
+                            </div>
+                            <div class="col-md-3">
+                                 <label for="" class="control-label">Rotina</label>
+                                <input type="text" class="form-control" placeholder="Rotina">
+                            </div>
+                            <div class="col-md-2">
+                                 <label for="" class="control-label">Peso</label>
+                                <input type="number" class="form-control" placeholder="Peso em Kg">
+                            </div>
+                            <div class="col-md-12 right">
+                                <button id="cancelar" class="btn btn-sm btn-vermelho"> <span class="ion-close"> </span>Cancelar</button>
+                                <button id="novo-animal" class="btn btn-sm btn-verde"> <span class="ion-plus-circled"> </span>Adicionar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+            </div>
+        </article>
+           
+    </div>
+
+
+
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            
+            // TOOLTIPS
+            $("[data-tt=tooltip]").tooltip();
+
+            // MANTER ANIMAIS
+            $("#add-animal").click(function() {
+                $('.add-animal').css('display', 'block');
+                $('html, body').animate({
+                    scrollTop: $(".add-animal").offset().top
+                }, 500);
+            });
+
+            $("#pesquisa-animal").click(function() {
+                $('.pesquisa-animal').css('display', 'block');
+            });
+
+        });
+    </script>
+</body>
+
+</html>

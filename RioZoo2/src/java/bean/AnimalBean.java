@@ -6,11 +6,13 @@
 package bean;
 
 import dao.AnimalJpaController;
+import dao.TratadorJpaController;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import model.Animal;
+import model.Tratador;
 import utils.JpaUtils;
 
 @ManagedBean(name = "animalBean")
@@ -23,12 +25,18 @@ public class AnimalBean {
     
     private List<Animal> animais;
     
+    private List<Tratador> tratadores;
+    
+    private TratadorJpaController tratadorJpaController;
+    
     
     @PostConstruct
     private void init(){
         this.animal = new Animal();
         animalJpaController = new AnimalJpaController(JpaUtils.emf);
         this.animais = animalJpaController.findAnimalEntities();
+        this.tratadorJpaController = new TratadorJpaController(JpaUtils.emf);
+        this.tratadores = tratadorJpaController.findTratadorEntities();
     }
     
     public void salvar(){

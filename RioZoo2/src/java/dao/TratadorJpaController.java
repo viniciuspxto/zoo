@@ -7,7 +7,6 @@ package dao;
 
 import dao.exceptions.IllegalOrphanException;
 import dao.exceptions.NonexistentEntityException;
-import dao.exceptions.PreexistingEntityException;
 import java.io.Serializable;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
@@ -39,7 +38,7 @@ public class TratadorJpaController implements Serializable {
         return emf.createEntityManager();
     }
 
-    public void create(Tratador tratador) throws PreexistingEntityException, Exception {
+    public void create(Tratador tratador) {
         if (tratador.getBoletimDiarioList() == null) {
             tratador.setBoletimDiarioList(new ArrayList<BoletimDiario>());
         }
@@ -118,11 +117,6 @@ public class TratadorJpaController implements Serializable {
                 }
             }
             em.getTransaction().commit();
-        } catch (Exception ex) {
-            if (findTratador(tratador.getId()) != null) {
-                throw new PreexistingEntityException("Tratador " + tratador + " already exists.", ex);
-            }
-            throw ex;
         } finally {
             if (em != null) {
                 em.close();

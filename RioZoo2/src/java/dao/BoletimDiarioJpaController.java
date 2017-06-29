@@ -14,9 +14,9 @@ import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-import model.Tratador;
 import model.Animal;
 import model.BoletimDiario;
+import model.Tratador;
 
 /**
  *
@@ -38,24 +38,24 @@ public class BoletimDiarioJpaController implements Serializable {
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            Tratador tratadorRespons = boletimDiario.getTratadorRespons();
-            if (tratadorRespons != null) {
-                tratadorRespons = em.getReference(tratadorRespons.getClass(), tratadorRespons.getId());
-                boletimDiario.setTratadorRespons(tratadorRespons);
-            }
             Animal animal = boletimDiario.getAnimal();
             if (animal != null) {
                 animal = em.getReference(animal.getClass(), animal.getId());
                 boletimDiario.setAnimal(animal);
             }
-            em.persist(boletimDiario);
+            Tratador tratadorRespons = boletimDiario.getTratadorRespons();
             if (tratadorRespons != null) {
-                tratadorRespons.getBoletimDiarioList().add(boletimDiario);
-                tratadorRespons = em.merge(tratadorRespons);
+                tratadorRespons = em.getReference(tratadorRespons.getClass(), tratadorRespons.getId());
+                boletimDiario.setTratadorRespons(tratadorRespons);
             }
+            em.persist(boletimDiario);
             if (animal != null) {
                 animal.getBoletimDiarioList().add(boletimDiario);
                 animal = em.merge(animal);
+            }
+            if (tratadorRespons != null) {
+                tratadorRespons.getBoletimDiarioList().add(boletimDiario);
+                tratadorRespons = em.merge(tratadorRespons);
             }
             em.getTransaction().commit();
         } finally {
@@ -71,27 +71,19 @@ public class BoletimDiarioJpaController implements Serializable {
             em = getEntityManager();
             em.getTransaction().begin();
             BoletimDiario persistentBoletimDiario = em.find(BoletimDiario.class, boletimDiario.getId());
-            Tratador tratadorResponsOld = persistentBoletimDiario.getTratadorRespons();
-            Tratador tratadorResponsNew = boletimDiario.getTratadorRespons();
             Animal animalOld = persistentBoletimDiario.getAnimal();
             Animal animalNew = boletimDiario.getAnimal();
-            if (tratadorResponsNew != null) {
-                tratadorResponsNew = em.getReference(tratadorResponsNew.getClass(), tratadorResponsNew.getId());
-                boletimDiario.setTratadorRespons(tratadorResponsNew);
-            }
+            Tratador tratadorResponsOld = persistentBoletimDiario.getTratadorRespons();
+            Tratador tratadorResponsNew = boletimDiario.getTratadorRespons();
             if (animalNew != null) {
                 animalNew = em.getReference(animalNew.getClass(), animalNew.getId());
                 boletimDiario.setAnimal(animalNew);
             }
+            if (tratadorResponsNew != null) {
+                tratadorResponsNew = em.getReference(tratadorResponsNew.getClass(), tratadorResponsNew.getId());
+                boletimDiario.setTratadorRespons(tratadorResponsNew);
+            }
             boletimDiario = em.merge(boletimDiario);
-            if (tratadorResponsOld != null && !tratadorResponsOld.equals(tratadorResponsNew)) {
-                tratadorResponsOld.getBoletimDiarioList().remove(boletimDiario);
-                tratadorResponsOld = em.merge(tratadorResponsOld);
-            }
-            if (tratadorResponsNew != null && !tratadorResponsNew.equals(tratadorResponsOld)) {
-                tratadorResponsNew.getBoletimDiarioList().add(boletimDiario);
-                tratadorResponsNew = em.merge(tratadorResponsNew);
-            }
             if (animalOld != null && !animalOld.equals(animalNew)) {
                 animalOld.getBoletimDiarioList().remove(boletimDiario);
                 animalOld = em.merge(animalOld);
@@ -99,6 +91,14 @@ public class BoletimDiarioJpaController implements Serializable {
             if (animalNew != null && !animalNew.equals(animalOld)) {
                 animalNew.getBoletimDiarioList().add(boletimDiario);
                 animalNew = em.merge(animalNew);
+            }
+            if (tratadorResponsOld != null && !tratadorResponsOld.equals(tratadorResponsNew)) {
+                tratadorResponsOld.getBoletimDiarioList().remove(boletimDiario);
+                tratadorResponsOld = em.merge(tratadorResponsOld);
+            }
+            if (tratadorResponsNew != null && !tratadorResponsNew.equals(tratadorResponsOld)) {
+                tratadorResponsNew.getBoletimDiarioList().add(boletimDiario);
+                tratadorResponsNew = em.merge(tratadorResponsNew);
             }
             em.getTransaction().commit();
         } catch (Exception ex) {
@@ -129,15 +129,15 @@ public class BoletimDiarioJpaController implements Serializable {
             } catch (EntityNotFoundException enfe) {
                 throw new NonexistentEntityException("The boletimDiario with id " + id + " no longer exists.", enfe);
             }
-            Tratador tratadorRespons = boletimDiario.getTratadorRespons();
-            if (tratadorRespons != null) {
-                tratadorRespons.getBoletimDiarioList().remove(boletimDiario);
-                tratadorRespons = em.merge(tratadorRespons);
-            }
             Animal animal = boletimDiario.getAnimal();
             if (animal != null) {
                 animal.getBoletimDiarioList().remove(boletimDiario);
                 animal = em.merge(animal);
+            }
+            Tratador tratadorRespons = boletimDiario.getTratadorRespons();
+            if (tratadorRespons != null) {
+                tratadorRespons.getBoletimDiarioList().remove(boletimDiario);
+                tratadorRespons = em.merge(tratadorRespons);
             }
             em.remove(boletimDiario);
             em.getTransaction().commit();

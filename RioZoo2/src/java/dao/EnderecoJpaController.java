@@ -6,7 +6,6 @@
 package dao;
 
 import dao.exceptions.NonexistentEntityException;
-import dao.exceptions.PreexistingEntityException;
 import java.io.Serializable;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
@@ -36,7 +35,7 @@ public class EnderecoJpaController implements Serializable {
         return emf.createEntityManager();
     }
 
-    public void create(Endereco endereco) throws PreexistingEntityException, Exception {
+    public void create(Endereco endereco) {
         if (endereco.getAdministradorList() == null) {
             endereco.setAdministradorList(new ArrayList<Administrador>());
         }
@@ -97,11 +96,6 @@ public class EnderecoJpaController implements Serializable {
                 }
             }
             em.getTransaction().commit();
-        } catch (Exception ex) {
-            if (findEndereco(endereco.getId()) != null) {
-                throw new PreexistingEntityException("Endereco " + endereco + " already exists.", ex);
-            }
-            throw ex;
         } finally {
             if (em != null) {
                 em.close();

@@ -9,7 +9,7 @@ import model.Consulta;
 import model.Endereco;
 import model.RegistroClinico;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2017-06-27T21:13:50")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2017-06-28T20:10:36")
 @StaticMetamodel(Veterinario.class)
 public class Veterinario_ { 
 

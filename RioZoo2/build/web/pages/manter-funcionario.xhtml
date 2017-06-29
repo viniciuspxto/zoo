@@ -189,9 +189,9 @@
                             </div>
                             <div class="col-md-2 equipe">
                                 <label for="" class="control-label">Equipe</label>
-                                <h:selectOneMenu id="selecionarEquipe" class="form-control">
+                                <h:selectOneMenu  value="#{funcionarioBean.equipeEscolhida}" id="selecionarEquipe" class="form-control">
                                     <f:selectItem itemLabel="Selecione" itemValue="" />
-                                    <f:selectItems value="#{funcionarioBean.equipes}" var="equipe" itemLabel="#{equipe.nome}" itemValue="#{equipe}" />
+                                    <f:selectItems value="#{funcionarioBean.equipes}" var="equipe" itemLabel="#{equipe.nome}" itemValue="#{equipe.id}" />
                                 </h:selectOneMenu>
                             </div>
                         </div>

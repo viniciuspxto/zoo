@@ -12,8 +12,8 @@ import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-import model.Tratador;
 import model.Rotina;
+import model.Tratador;
 import model.RegistroClinico;
 import java.util.ArrayList;
 import java.util.List;
@@ -56,15 +56,15 @@ public class AnimalJpaController implements Serializable {
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            Tratador tratadorResponsavel = animal.getTratadorResponsavel();
-            if (tratadorResponsavel != null) {
-                tratadorResponsavel = em.getReference(tratadorResponsavel.getClass(), tratadorResponsavel.getId());
-                animal.setTratadorResponsavel(tratadorResponsavel);
-            }
             Rotina rotina = animal.getRotina();
             if (rotina != null) {
                 rotina = em.getReference(rotina.getClass(), rotina.getId());
                 animal.setRotina(rotina);
+            }
+            Tratador tratadorResponsavel = animal.getTratadorResponsavel();
+            if (tratadorResponsavel != null) {
+                tratadorResponsavel = em.getReference(tratadorResponsavel.getClass(), tratadorResponsavel.getId());
+                animal.setTratadorResponsavel(tratadorResponsavel);
             }
             List<RegistroClinico> attachedRegistroClinicoList = new ArrayList<RegistroClinico>();
             for (RegistroClinico registroClinicoListRegistroClinicoToAttach : animal.getRegistroClinicoList()) {
@@ -91,13 +91,13 @@ public class AnimalJpaController implements Serializable {
             }
             animal.setConsultaList(attachedConsultaList);
             em.persist(animal);
-            if (tratadorResponsavel != null) {
-                tratadorResponsavel.getAnimalList().add(animal);
-                tratadorResponsavel = em.merge(tratadorResponsavel);
-            }
             if (rotina != null) {
                 rotina.getAnimalList().add(animal);
                 rotina = em.merge(rotina);
+            }
+            if (tratadorResponsavel != null) {
+                tratadorResponsavel.getAnimalList().add(animal);
+                tratadorResponsavel = em.merge(tratadorResponsavel);
             }
             for (RegistroClinico registroClinicoListRegistroClinico : animal.getRegistroClinicoList()) {
                 Animal oldAnimalOfRegistroClinicoListRegistroClinico = registroClinicoListRegistroClinico.getAnimal();
@@ -149,10 +149,10 @@ public class AnimalJpaController implements Serializable {
             em = getEntityManager();
             em.getTransaction().begin();
             Animal persistentAnimal = em.find(Animal.class, animal.getId());
-            Tratador tratadorResponsavelOld = persistentAnimal.getTratadorResponsavel();
-            Tratador tratadorResponsavelNew = animal.getTratadorResponsavel();
             Rotina rotinaOld = persistentAnimal.getRotina();
             Rotina rotinaNew = animal.getRotina();
+            Tratador tratadorResponsavelOld = persistentAnimal.getTratadorResponsavel();
+            Tratador tratadorResponsavelNew = animal.getTratadorResponsavel();
             List<RegistroClinico> registroClinicoListOld = persistentAnimal.getRegistroClinicoList();
             List<RegistroClinico> registroClinicoListNew = animal.getRegistroClinicoList();
             List<BoletimDiario> boletimDiarioListOld = persistentAnimal.getBoletimDiarioList();
@@ -197,13 +197,13 @@ public class AnimalJpaController implements Serializable {
             if (illegalOrphanMessages != null) {
                 throw new IllegalOrphanException(illegalOrphanMessages);
             }
-            if (tratadorResponsavelNew != null) {
-                tratadorResponsavelNew = em.getReference(tratadorResponsavelNew.getClass(), tratadorResponsavelNew.getId());
-                animal.setTratadorResponsavel(tratadorResponsavelNew);
-            }
             if (rotinaNew != null) {
                 rotinaNew = em.getReference(rotinaNew.getClass(), rotinaNew.getId());
                 animal.setRotina(rotinaNew);
+            }
+            if (tratadorResponsavelNew != null) {
+                tratadorResponsavelNew = em.getReference(tratadorResponsavelNew.getClass(), tratadorResponsavelNew.getId());
+                animal.setTratadorResponsavel(tratadorResponsavelNew);
             }
             List<RegistroClinico> attachedRegistroClinicoListNew = new ArrayList<RegistroClinico>();
             for (RegistroClinico registroClinicoListNewRegistroClinicoToAttach : registroClinicoListNew) {
@@ -234,14 +234,6 @@ public class AnimalJpaController implements Serializable {
             consultaListNew = attachedConsultaListNew;
             animal.setConsultaList(consultaListNew);
             animal = em.merge(animal);
-            if (tratadorResponsavelOld != null && !tratadorResponsavelOld.equals(tratadorResponsavelNew)) {
-                tratadorResponsavelOld.getAnimalList().remove(animal);
-                tratadorResponsavelOld = em.merge(tratadorResponsavelOld);
-            }
-            if (tratadorResponsavelNew != null && !tratadorResponsavelNew.equals(tratadorResponsavelOld)) {
-                tratadorResponsavelNew.getAnimalList().add(animal);
-                tratadorResponsavelNew = em.merge(tratadorResponsavelNew);
-            }
             if (rotinaOld != null && !rotinaOld.equals(rotinaNew)) {
                 rotinaOld.getAnimalList().remove(animal);
                 rotinaOld = em.merge(rotinaOld);
@@ -249,6 +241,14 @@ public class AnimalJpaController implements Serializable {
             if (rotinaNew != null && !rotinaNew.equals(rotinaOld)) {
                 rotinaNew.getAnimalList().add(animal);
                 rotinaNew = em.merge(rotinaNew);
+            }
+            if (tratadorResponsavelOld != null && !tratadorResponsavelOld.equals(tratadorResponsavelNew)) {
+                tratadorResponsavelOld.getAnimalList().remove(animal);
+                tratadorResponsavelOld = em.merge(tratadorResponsavelOld);
+            }
+            if (tratadorResponsavelNew != null && !tratadorResponsavelNew.equals(tratadorResponsavelOld)) {
+                tratadorResponsavelNew.getAnimalList().add(animal);
+                tratadorResponsavelNew = em.merge(tratadorResponsavelNew);
             }
             for (RegistroClinico registroClinicoListNewRegistroClinico : registroClinicoListNew) {
                 if (!registroClinicoListOld.contains(registroClinicoListNewRegistroClinico)) {
@@ -355,15 +355,15 @@ public class AnimalJpaController implements Serializable {
             if (illegalOrphanMessages != null) {
                 throw new IllegalOrphanException(illegalOrphanMessages);
             }
-            Tratador tratadorResponsavel = animal.getTratadorResponsavel();
-            if (tratadorResponsavel != null) {
-                tratadorResponsavel.getAnimalList().remove(animal);
-                tratadorResponsavel = em.merge(tratadorResponsavel);
-            }
             Rotina rotina = animal.getRotina();
             if (rotina != null) {
                 rotina.getAnimalList().remove(animal);
                 rotina = em.merge(rotina);
+            }
+            Tratador tratadorResponsavel = animal.getTratadorResponsavel();
+            if (tratadorResponsavel != null) {
+                tratadorResponsavel.getAnimalList().remove(animal);
+                tratadorResponsavel = em.merge(tratadorResponsavel);
             }
             em.remove(animal);
             em.getTransaction().commit();

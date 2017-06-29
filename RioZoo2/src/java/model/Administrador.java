@@ -49,6 +49,7 @@ public class Administrador implements Serializable {
     private Endereco endereco;
 
     public Administrador() {
+        this.endereco = new Endereco();
     }
 
     public Administrador(Integer id) {

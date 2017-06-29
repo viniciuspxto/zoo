@@ -12,7 +12,7 @@ import model.Rotina;
 import model.Tratador;
 import model.TratadorAnimal;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2017-06-27T21:13:50")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2017-06-28T20:10:36")
 @StaticMetamodel(Animal.class)
 public class Animal_ { 
 

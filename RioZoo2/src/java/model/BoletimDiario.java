@@ -52,12 +52,12 @@ public class BoletimDiario implements Serializable {
     private String parecer;
     @Column(name = "observacoes")
     private String observacoes;
-    @JoinColumn(name = "tratadorRespons", referencedColumnName = "id")
-    @ManyToOne(optional = false)
-    private Tratador tratadorRespons;
     @JoinColumn(name = "animal", referencedColumnName = "id")
     @ManyToOne(optional = false)
     private Animal animal;
+    @JoinColumn(name = "tratadorRespons", referencedColumnName = "id")
+    @ManyToOne(optional = false)
+    private Tratador tratadorRespons;
 
     public BoletimDiario() {
     }
@@ -104,20 +104,20 @@ public class BoletimDiario implements Serializable {
         this.observacoes = observacoes;
     }
 
-    public Tratador getTratadorRespons() {
-        return tratadorRespons;
-    }
-
-    public void setTratadorRespons(Tratador tratadorRespons) {
-        this.tratadorRespons = tratadorRespons;
-    }
-
     public Animal getAnimal() {
         return animal;
     }
 
     public void setAnimal(Animal animal) {
         this.animal = animal;
+    }
+
+    public Tratador getTratadorRespons() {
+        return tratadorRespons;
+    }
+
+    public void setTratadorRespons(Tratador tratadorRespons) {
+        this.tratadorRespons = tratadorRespons;
     }
 
     @Override

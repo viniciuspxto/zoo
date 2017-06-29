@@ -43,7 +43,7 @@ public class Equipe implements Serializable {
     @Basic(optional = false)
     @Column(name = "nome")
     private String nome;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "equipe")
+    @OneToMany(cascade = CascadeType.MERGE, mappedBy = "equipe")
     private List<Tratador> tratadorList;
 
     public Equipe() {

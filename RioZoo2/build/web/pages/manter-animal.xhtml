@@ -38,7 +38,7 @@
                                 <label for="" class="control-label">Nome do Tratador</label>
                                 <h:selectOneMenu id="selecionarTratador" class="form-control">
                                     <f:selectItem itemLabel="Selecione" itemValue="" />
-                                    <f:selectItems value="#{funcionarioBean.tratadores}" var="equipe" itemLabel="#{equipe.nome}" itemValue="#{equipe}" />
+                                    <f:selectItems value="#{funcionarioBean.tratadores}" var="equipe" itemLabel="#{tratador.nome}" itemValue="#{tratador}" />
                                 </h:selectOneMenu>
                                 
                                 
@@ -125,8 +125,11 @@
                                 <h:inputText class="form-control" a:placeholder="Data Nascimento" value="#{animalBean.animal.dataNascimento}"/>
                             </div>
                             <div class="col-md-4">
-                                <label for="" class="control-label">Nome do Tratador</label>
-                                <h:inputText class="form-control" a:placeholder="Nome do tratador" value="#{animalBean.animal.tratadorResponsavel}"/>
+                                <label for="" class="control-label">Tratador Responsável</label>
+                                <h:selectOneMenu value = "#{animalBean.animal.tratadorResponsavel}"> 
+                                    <f:selectItem itemLabel="Selecione" itemValue="" />
+                                    <f:selectItems value="#{funcionarioBean.tratadores}" var="tratador" itemLabel="#{tratador.nome}" itemValue="#{tratador}" />
+                                </h:selectOneMenu>
                             </div>
                             <div class="col-md-2">
                                 <label for="" class="control-label">Origem</label>
@@ -149,23 +152,14 @@
                             </div>
                             <div class="col-md-2">
                                 <label for="" class="control-label">Código</label>
-                                <h:inputText class="form-control" a:placeholder="Rotina" value=""/>
-                            </div>
-                            <div class="col-md-2">
-                                <label for="" class="control-label">Data Validade</label>
-                                <h:inputText class="form-control" a:placeholder="Rotina" value=""/>
-                            </div>
-                            <div class="col-md-4">
-                                <label for="" class="control-label">Tarefa 1</label>
-                                <h:inputText class="form-control" a:placeholder="Rotina" value=""/>
-                            </div>
-                            <div class="col-md-4">
-                                <label for="" class="control-label">Tarefa 2</label>
-                                <h:inputText class="form-control" a:placeholder="Rotina" value=""/>
+                                <h:selectOneMenu id="selecionarRotina" class="form-control">
+                                    <f:selectItem itemLabel="Selecione" itemValue="" />
+                                    <f:selectItems value="#{rotinaBean.rotinas}" var="rotina" itemLabel="#{rotina.codigo}" itemValue="#{rotina}" />
+                                </h:selectOneMenu>
                             </div>
                             <div class="col-md-12 right">
                                 <button id="cancelar" class="btn btn-sm btn-vermelho"> <span class="ion-close"> </span>Cancelar</button>
-                                <h:commandButton action="#{animalBean.salvar()}" value="Adicionar" id="novo-animal" class="btn btn-sm btn-verde"> <span class="ion-plus-circled"> </span></h:commandButton>
+                                <h:commandButton action="#{animalBean.salvar()}" value="Adicionar" id="novo-animal" class="btn btn-sm btn-verde"></h:commandButton>
                             </div>
                         </h:form>
                     </div>

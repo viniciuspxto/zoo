@@ -79,12 +79,12 @@ public class Animal implements Serializable {
     private List<BoletimDiario> boletimDiarioList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "animal")
     private List<TratadorAnimal> tratadorAnimalList;
-    @JoinColumn(name = "tratadorResponsavel", referencedColumnName = "id")
-    @ManyToOne(optional = false)
-    private Tratador tratadorResponsavel;
     @JoinColumn(name = "rotina", referencedColumnName = "id")
     @ManyToOne(optional = false)
     private Rotina rotina;
+    @JoinColumn(name = "tratadorResponsavel", referencedColumnName = "id")
+    @ManyToOne(optional = false)
+    private Tratador tratadorResponsavel;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "animal")
     private List<Consulta> consultaList;
 
@@ -197,20 +197,20 @@ public class Animal implements Serializable {
         this.tratadorAnimalList = tratadorAnimalList;
     }
 
-    public Tratador getTratadorResponsavel() {
-        return tratadorResponsavel;
-    }
-
-    public void setTratadorResponsavel(Tratador tratadorResponsavel) {
-        this.tratadorResponsavel = tratadorResponsavel;
-    }
-
     public Rotina getRotina() {
         return rotina;
     }
 
     public void setRotina(Rotina rotina) {
         this.rotina = rotina;
+    }
+
+    public Tratador getTratadorResponsavel() {
+        return tratadorResponsavel;
+    }
+
+    public void setTratadorResponsavel(Tratador tratadorResponsavel) {
+        this.tratadorResponsavel = tratadorResponsavel;
     }
 
     @XmlTransient

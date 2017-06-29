@@ -66,6 +66,7 @@ public class Veterinario implements Serializable {
     private List<Consulta> consultaList;
 
     public Veterinario() {
+        this.endereco = new Endereco();
     }
 
     public Veterinario(Integer id) {

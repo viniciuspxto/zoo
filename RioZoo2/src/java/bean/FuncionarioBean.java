@@ -34,6 +34,7 @@ public class FuncionarioBean {
     private String selecionado;
     
     private List<Equipe> equipes;
+    private int equipeEscolhida;
     
     private List<Tratador> tratadores;
     
@@ -61,15 +62,18 @@ public class FuncionarioBean {
     }
     
     public void salvarTratador() {
-        getTratador();
+        try {
+            Equipe equipe = equipeJpaController.findEquipe(this.equipeEscolhida);
+            this.tratador.setEquipe(equipe);
+            this.tratadorJpaController.create(tratador);
+        } catch (Exception ex) {
+            Logger.getLogger(FuncionarioBean.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     public void excluir() {
        
     }
-    
-    
-    
     
     public String manterFuncionario () {
         return "/pages/manter-funcionario";
@@ -122,6 +126,16 @@ public class FuncionarioBean {
     public void setTratadores(List<Tratador> tratadores) {
         this.tratadores = tratadores;
     }
+
+    public int getEquipeEscolhida() {
+        return equipeEscolhida;
+    }
+
+    public void setEquipeEscolhida(int equipeEscolhida) {
+        this.equipeEscolhida = equipeEscolhida;
+    }
+
+    
     
     
 
